@@ -1,0 +1,38 @@
+const http =require('http');
+const homePage =
+`<!DOCTYPE html>
+    <html>
+        <head>
+        <meta charset="utf-8">
+        <title>Nodejs部署上线示例(随时失效)</title>
+        </head>
+        <body>
+            <hl>慕课网 Nodejs高级课程</h1>
+            <h2>项目部署上线示例</h2>
+            <nav>
+                <ul>
+                    <li>
+                        <a target="_blank"href="/a">Nodejs 电影网站</a>
+                    </li>
+                    <li>
+                        <a target="_blank"href="/a">狗狗说 App 后台</a>
+                    </li>
+                    <li>
+                        <a target="_blank"href="/a">微信小程序后台</a>
+                    </li>
+                    <li>
+                        <a target="_blank"href="/a">微信公众号后台</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </body>
+    </html>
+    `
+http.createServer((req,res)=>{
+    res.statusCode = 200;
+    res.setHeader('Content-Type','Text/html');
+    res.end(homePage)
+}).listen(3000,()=>{
+    console.log('Server Runing At 3000')
+});
